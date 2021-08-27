@@ -32,9 +32,7 @@ namespace basic_about_c_sharp.basic
             Console.WriteLine(path);
             Console.WriteLine(solution);
 
-            int? count = null;
-
-            Console.WriteLine(count is Nullable);
+            Console.WriteLine();
         }
     }
 }

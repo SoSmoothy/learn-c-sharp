@@ -8,7 +8,9 @@ namespace basic_about_c_sharp
         static void Main(string[] args)
         {
             //BasicCode.BasicMain();
-            DataType.DataTypeMain();
+            //DataType.DataTypeMain();
+            //Operator.OperatorMain();
+            ConsoleInCSharp.ConsoleMain();
         }
     }
 }
