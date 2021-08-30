@@ -9,7 +9,7 @@ namespace basic_about_c_sharp.basic.Delegate
 
         public delegate void Action<in T>(T obj);
 
-        public delegate V Func<in T, out V>(T x);
+        public delegate TV Func<in T, out TV>(T x);
 
         public delegate bool Perdicate<in T>(T obj);
 
