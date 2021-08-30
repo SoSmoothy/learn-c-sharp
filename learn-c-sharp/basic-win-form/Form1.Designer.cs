@@ -31,9 +31,8 @@ namespace basic_win_form
         {
             this.LinkInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.previewBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.previewBox)).BeginInit();
+            this.DlProgress = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // LinkInput
@@ -52,42 +51,36 @@ namespace basic_win_form
             this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Link:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // previewBox
-            // 
-            this.previewBox.Location = new System.Drawing.Point(56, 35);
-            this.previewBox.Name = "previewBox";
-            this.previewBox.Size = new System.Drawing.Size(457, 314);
-            this.previewBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.previewBox.TabIndex = 2;
-            this.previewBox.TabStop = false;
-            this.previewBox.WaitOnLoad = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(517, 9);
+            this.button1.Location = new System.Drawing.Point(519, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 20);
+            this.button1.Size = new System.Drawing.Size(65, 27);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Preview";
+            this.button1.Text = "Download";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // DlProgress
+            // 
+            this.DlProgress.Location = new System.Drawing.Point(56, 45);
+            this.DlProgress.Name = "DlProgress";
+            this.DlProgress.Size = new System.Drawing.Size(457, 23);
+            this.DlProgress.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(590, 80);
+            this.Controls.Add(this.DlProgress);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.previewBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LinkInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "IMG Donwload";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.previewBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,8 +90,8 @@ namespace basic_win_form
 
         private System.Windows.Forms.TextBox LinkInput;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox previewBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ProgressBar DlProgress;
     }
 }
 
