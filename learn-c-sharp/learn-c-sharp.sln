@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "basic-about-c-sharp", "basi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "basic-win-form", "basic-win-form\basic-win-form.csproj", "{27C4B016-9CFF-4FB5-99AB-7FC563E038F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DlApp", "DlApp\DlApp.csproj", "{869FFD71-DB7B-43F3-B0DD-ED7485E4E721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DlApp", "DlApp\DlApp.csproj", "{869FFD71-DB7B-43F3-B0DD-ED7485E4E721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn-delegate", "learn-delegate\learn-delegate.csproj", "{81D0E674-2CFB-4C08-99E6-4CCCED3866FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{869FFD71-DB7B-43F3-B0DD-ED7485E4E721}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{869FFD71-DB7B-43F3-B0DD-ED7485E4E721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{869FFD71-DB7B-43F3-B0DD-ED7485E4E721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D0E674-2CFB-4C08-99E6-4CCCED3866FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D0E674-2CFB-4C08-99E6-4CCCED3866FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D0E674-2CFB-4C08-99E6-4CCCED3866FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D0E674-2CFB-4C08-99E6-4CCCED3866FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
