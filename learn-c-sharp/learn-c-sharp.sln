@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn-delegate", "learn-del
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn-event", "learn-event\learn-event.csproj", "{AEA2F7B8-1990-444D-8DAC-55A418EF389C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn-exeption", "learn-exeption\learn-exeption.csproj", "{2DDBE506-A97E-48DE-9F3E-901D2FF9CB3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn-networking", "learn-networking\learn-networking.csproj", "{1A7B11F7-FAB2-425C-9394-76A9DBCC6F1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{AEA2F7B8-1990-444D-8DAC-55A418EF389C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEA2F7B8-1990-444D-8DAC-55A418EF389C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEA2F7B8-1990-444D-8DAC-55A418EF389C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDBE506-A97E-48DE-9F3E-901D2FF9CB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDBE506-A97E-48DE-9F3E-901D2FF9CB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDBE506-A97E-48DE-9F3E-901D2FF9CB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDBE506-A97E-48DE-9F3E-901D2FF9CB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7B11F7-FAB2-425C-9394-76A9DBCC6F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7B11F7-FAB2-425C-9394-76A9DBCC6F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7B11F7-FAB2-425C-9394-76A9DBCC6F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7B11F7-FAB2-425C-9394-76A9DBCC6F1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
