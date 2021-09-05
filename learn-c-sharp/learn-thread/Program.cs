@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,68 +9,37 @@ namespace learn_thread
 {
     class Program
     {
-        public static void WriteLine(string message, ConsoleColor color)
-        {
-            Console.ForegroundColor = color;
-            Console.WriteLine(message);
-        }
-
-        public static Task<string> Async1(string thamso1, string thamso2)
-        {
-            Func<object, string> myfunc = (object thamso) => {
-                dynamic ts = thamso;
-                for (int i = 1; i <= 10; i++) {
-                    WriteLine ($"{i,5} {Thread.CurrentThread.ManagedThreadId,3} Tham số {ts.x} {ts.y}",
-                        ConsoleColor.Green);
-                    Thread.Sleep (500);
-                }
-                return $"Kết thúc Async1! {ts.x}";
-            };
-
-            Task<string> task = new Task<string> (myfunc, new { x = thamso1, y = thamso2 });
-            task.Start();
-            
-            Console.WriteLine("Async1: Làm gì đó sau khi task chạy");
-
-
-            return task;
-        }
         
-        public static Task Async2 () {
-
-            Action myaction = () => {
-                for (int i = 1; i <= 10; i++) {
-                    WriteLine ($"{i,5} {Thread.CurrentThread.ManagedThreadId,3}",
-                        ConsoleColor.Yellow);
-                    Thread.Sleep (2000);
-                }
-            };
-            Task task = new Task (myaction);
-            task.Start();
-
-            // Làm gì đó sau khi chạy Task ở đây
-            Console.WriteLine("Async2: Làm gì đó sau khi task chạy");
-
-            return task;
+        private static void Progress_Changed(object sender, DownloadProgressChangedEventArgs e)
+        {
+            Console.WriteLine($"{e.BytesReceived/e.TotalBytesToReceive} {e.ProgressPercentage}");
         }
-        
+
+        private static void Completed(object sender, AsyncCompletedEventArgs e)
+        {
+            Console.WriteLine($"Done");
+        }
+        static void Download(string url, string filename)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadProgressChanged += Progress_Changed;
+                webClient.DownloadFileCompleted += Completed;
+                webClient.DownloadFile(url, filename);
+            }
+        }
+
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine($"{' ',5} {Thread.CurrentThread.ManagedThreadId,3} MainThread");
-            Task<string> t1 = Async1("A", "B");
-            Task t2 = Async2();
-
-            Console.WriteLine("Làm gì đó ở thread chính sau khi 2 task chạy");
-
-            // Chờ t1 kết thúc và đọc kết quả trả về
-            t1.Wait();
-            String s = t1.Result;
-            WriteLine(s, ConsoleColor.Red);
-
-            // Ngăn không cho thread chính kết thúc
-            // Nếu thread chính kết thúc mà t2 đang chạy nó sẽ bị ngắt
-            Console.ReadKey();
+            for (int i = 0; i < 5; i++)
+            {
+                Thread t = new Thread(() =>
+                {
+                    Download("https://images4.alphacoders.com/109/1094088.jpg", $"{i}.png");
+                });
+                
+                t.Start();
+            }
         }
     }
 }
