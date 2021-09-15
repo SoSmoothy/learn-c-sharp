@@ -4,41 +4,17 @@ namespace learn_delegate
 {
     class Program
     {
-        public delegate void Logger(string s);
-
-        public static void LogSuccess(string message)
+        static void TinhTong(int x, int y, Action<int> display)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(message);
-            Console.ResetColor();
-        }
-
-        public static void LogError(string message)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(message);
-            Console.ResetColor();
-        }
-
-        public static int SumNum(int x)
-        {
-            return x * 2;
+            display?.Invoke(x + y);
         }
         
         static void Main(string[] args)
         {
-            Logger logger = null;
-            logger += LogSuccess;
-            logger += LogError;
-            logger("Log Error");
-
-            Action<string> log;
-            log = LogSuccess;
-            log("Done");
-
-            Func<int, int> sum;
-            sum = SumNum;
-            Console.WriteLine(sum(2));
+            TinhTong(1, 2, result =>
+            {
+                Console.WriteLine(result); // 3
+            });
         }
     }
 }
