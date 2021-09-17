@@ -31,29 +31,32 @@ namespace learn_crawl.Controller
         public async Task GetCovidData()
         {
             var result = await Request.GetInfoCovid();
-            if (_covid == null)
-            {
-                NewCovidData?.Invoke(this, EventArgs.Empty);
-                _covid = result;
-            }
-            else
-            {
-                if (_covid.Equals(result))
-                {
-                    NothingChanged?.Invoke(this, EventArgs.Empty);
-                }
-                else
-                {
-                    CovidUpdate?.Invoke(this, new CovidDataUpdate(result));
-                    _covid = result;
-                }
-            }
+            Covid = result;
         }
 
         public Covid Covid
         {
             get => _covid;
-            set => _covid = value;
+            set
+            {
+                if (Covid != null)
+                {
+                    var logic = Covid.Equals(value);
+                    if (logic)
+                    {
+                        NothingChanged?.Invoke(this, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        CovidUpdate?.Invoke(this, new CovidDataUpdate(value));
+                    }
+                }
+                else
+                {
+                    NewCovidData?.Invoke(this, EventArgs.Empty);
+                    _covid = value;
+                }
+            }
         }
     }
 }
